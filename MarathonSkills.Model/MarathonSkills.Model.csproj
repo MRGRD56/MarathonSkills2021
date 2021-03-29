@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{646E7327-A18F-4D57-AA34-CE522508FD06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarathonSkills.Model</RootNamespace>
+    <AssemblyName>MarathonSkills.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="DbModels\Charity.cs" />
+    <Compile Include="DbModels\Country.cs" />
+    <Compile Include="DbModels\Event.cs" />
+    <Compile Include="DbModels\EventType.cs" />
+    <Compile Include="DbModels\Gender.cs" />
+    <Compile Include="DbModels\Marathon.cs" />
+    <Compile Include="DbModels\Position.cs" />
+    <Compile Include="DbModels\RaceKitOption.cs" />
+    <Compile Include="DbModels\Registration.cs" />
+    <Compile Include="DbModels\RegistrationEvent.cs" />
+    <Compile Include="DbModels\RegistrationStatus.cs" />
+    <Compile Include="DbModels\Role.cs" />
+    <Compile Include="DbModels\Runner.cs" />
+    <Compile Include="DbModels\Sponsorship.cs" />
+    <Compile Include="DbModels\Staff.cs" />
+    <Compile Include="DbModels\Timesheet.cs" />
+    <Compile Include="DbModels\User.cs" />
+    <Compile Include="DbModels\Volunteer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarathonSkills.Shared\MarathonSkills.Shared.csproj">
+      <Project>{4a074de9-5653-4c65-83a6-bd1d81c4bd87}</Project>
+      <Name>MarathonSkills.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
