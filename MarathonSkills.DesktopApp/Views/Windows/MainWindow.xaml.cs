@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using MarathonSkills.DesktopApp.Other;
+using MarathonSkills.DesktopApp.Views.Pages;
+using MarathonSkills2021.ViewModels.WindowsViewModels;
 
 namespace MarathonSkills.DesktopApp.Views.Windows
 {
@@ -19,9 +10,13 @@ namespace MarathonSkills.DesktopApp.Views.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainWindowViewModel ViewModel => (MainWindowViewModel) DataContext;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Navigation.Navigate(new MainMenuPage());
         }
     }
 }

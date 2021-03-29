@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="TextBlock" x:Key="HeaderBase">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkGrayBrush}"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Header20" BasedOn="{StaticResource HeaderBase}">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="0 6"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Header16" BasedOn="{StaticResource HeaderBase}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="0 8"/>
+    </Style>
+</ResourceDictionary>

@@ -4,9 +4,60 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarathonSkills.DesktopApp.Views.Windows"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:windowsViewModels="clr-namespace:MarathonSkills2021.ViewModels.WindowsViewModels"
+        xmlns:converters="clr-namespace:MarathonSkills.DesktopApp.Converters"
+        mc:Ignorable="d" 
+        Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="CenterScreen"
+        Title="MarathonSkills 2021" Height="450" Width="800">
+    <Window.DataContext>
+        <windowsViewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <converters:IsVisibleConverter x:Key="IsVisibleConverter"/>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource DarkGrayBrush}"
+              Visibility="{Binding IsBigHeaderVisible, Converter={StaticResource IsVisibleConverter}}">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 15">
+                <TextBlock Text="MARATHON SKILLS 2021" Foreground="White" FontSize="28"
+                       FontWeight="SemiBold"/>
+
+                <TextBlock Margin="0 5 0 0" Foreground="{StaticResource LightGrayBrush}"
+                           FontStyle="Italic" TextAlignment="Center" FontSize="18">
+                    Москва, Россия
+                    <LineBreak/>
+                    четверг 21 октября 2021
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="0" Background="{StaticResource DarkGrayBrush}"
+              Visibility="{Binding IsSmallHeaderVisible, Converter={StaticResource IsVisibleConverter}}">
+            <StackPanel Orientation="Horizontal" Margin="5 1" VerticalAlignment="Center">
+                <Button Content="Назад" Style="{StaticResource ButtonStyle}" Height="25"
+                        Command="{Binding GoBackCommand}"/>
+                <Label Content="MARATHON SKILLS 2021" Margin="15 0 0 0" Foreground="White"
+                       FontWeight="SemiBold" FontSize="20"/>
+            </StackPanel>
+        </Grid>
+
+        <Frame Grid.Row="1" Name="Frame" NavigationUIVisibility="Hidden"/>
+
+        <Grid Grid.Row="2" Background="{StaticResource DarkGrayBrush}">
+            <TextBlock Text="{Binding RemainingTime, 
+                StringFormat={}{0:dd} дней {0:hh} часов и {0:mm} минут до старта марафона!}"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Margin="0 4"
+                       FontSize="15"/>
+        </Grid>
     </Grid>
 </Window>

@@ -27,6 +27,6 @@ namespace MarathonSkills.Model.DbModels
 
         public virtual Country Country { get; set; }
 
-        public virtual Gender Gender1 { get; set; }
+        public virtual Gender GenderNav { get; set; }
     }
 }

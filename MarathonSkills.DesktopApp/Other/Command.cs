@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace MarathonSkills.DesktopApp.Other
 {
-    internal class Command : ICommand
+    public class Command : ICommand
     {
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;

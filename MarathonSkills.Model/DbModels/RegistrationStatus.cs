@@ -6,7 +6,7 @@ namespace MarathonSkills.Model.DbModels
     using System.ComponentModel.DataAnnotations.Schema;
     
 
-    [Table("Status")]
+    [Table("RegistrationStatus")]
     public partial class RegistrationStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

@@ -67,8 +67,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\IsVisibleConverter.cs" />
+    <Compile Include="Converters\IsVisibleReversedConverter.cs" />
     <Compile Include="Other\Command.cs" />
+    <Compile Include="Other\Navigation.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\MainMenuPageViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\SponsorRunnerPageViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\SponsorshipConfirmationPageViewModel.cs" />
+    <Compile Include="ViewModels\WindowsViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Pages\MainMenuPage.xaml.cs">
+      <DependentUpon>MainMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RegisterAsRunnerPage.xaml.cs">
+      <DependentUpon>RegisterAsRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\SponsorRunnerPage.xaml.cs">
+      <DependentUpon>SponsorRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\SponsorshipConfirmationPage.xaml.cs">
+      <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -113,16 +132,47 @@
       <Name>MarathonSkills.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Styles\" />
-    <Folder Include="ViewModels\PagesViewModels\" />
-    <Folder Include="ViewModels\WindowsViewModels\" />
-    <Folder Include="Views\Pages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Views\Windows\MainWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Styles\AllElements.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Text.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\RegisterAsRunnerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\SponsorRunnerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\SponsorshipConfirmationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

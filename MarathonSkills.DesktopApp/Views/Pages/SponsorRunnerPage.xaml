@@ -1,0 +1,131 @@
+﻿<Page x:Class="MarathonSkills.DesktopApp.Views.Pages.SponsorRunnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.DesktopApp.Views.Pages"
+      xmlns:pagesViewModels="clr-namespace:MarathonSkills.DesktopApp.ViewModels.PagesViewModels"
+      xmlns:converters="clr-namespace:MarathonSkills.DesktopApp.Converters"
+      mc:Ignorable="d" Style="{StaticResource PageStyle}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Спонсировать бегуна">
+    <Page.DataContext>
+        <pagesViewModels:SponsorRunnerPageViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <converters:IsVisibleReversedConverter x:Key="IsVisibleReversedConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Спонсировать бегуна" Style="{StaticResource Header20}"/>
+                <TextBlock FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="0 1 0 10"
+                           MaxWidth="700"
+                           Text="Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму, которую вы хотели бы спонсировать. Спасибо за вашу поддержку бегунов и их благотворительных учреждений."/>
+            </StackPanel>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Control" x:Key="MarginStyle">
+                        <Setter Property="Margin" Value="0 2"/>
+                    </Style>
+                    <Style TargetType="Label" BasedOn="{StaticResource MarginStyle}">
+                        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                    </Style>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource MarginStyle}"/>
+                    <Style TargetType="PasswordBox" BasedOn="{StaticResource MarginStyle}"/>
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource MarginStyle}"/>
+                </Grid.Resources>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Информация о спонсоре"
+                       Style="{StaticResource Header16}"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Ваше имя: "/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Бегун: "/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Влад-ц карты: "/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Номер карты: "/>
+                <Label Grid.Row="5" Grid.Column="0" Content="Срок действия: "/>
+                <Label Grid.Row="6" Grid.Column="0" Content="CVC: "/>
+                <TextBox Grid.Row="1" Grid.Column="1" 
+                         Text="{Binding NewSponsorship.SponsorName, 
+                            UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox Grid.Row="2" Grid.Column="1"
+                          ItemsSource="{Binding Registrations}"
+                          SelectedItem="{Binding NewSponsorship.Registration}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CardOwner, 
+                            UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CardNumber,
+                            UpdateSourceTrigger=PropertyChanged}"
+                            MaxLength="16"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Width="100" HorizontalAlignment="Left"
+                         Text="{Binding CardDate, StringFormat={}{0:MM/yy},
+                            UpdateSourceTrigger=LostFocus}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0 2" Width="60" HorizontalAlignment="Left"
+                         MaxLength="3"
+                         Text="{Binding CardCvc, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"
+                        Visibility="{Binding NewSponsorship.IsRunnerSelected, 
+                            Converter={StaticResource IsVisibleReversedConverter}}">
+                <TextBlock Text="Благотворительность" Style="{StaticResource Header16}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Center" VerticalAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding NewSponsorship.Registration.Charity.CharityName}"/>
+                    <Button Grid.Column="1" Style="{StaticResource ButtonStyle}" Content="?" Width="23" FontSize="15" Padding="0"/>
+                </Grid>
+                <TextBlock Text="Сумма пожертвования" Style="{StaticResource Header16}" Margin="0 20 0 5"/>
+                <TextBlock Style="{StaticResource HeaderBase}" FontSize="45" Foreground="Gray"
+                           Text="{Binding NewSponsorship.Amount, StringFormat=${0:N0}}"/>
+                <Grid HorizontalAlignment="Center" Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource ButtonStyle}" Content="_" FontWeight="SemiBold" Padding="6 -10 6 0"
+                            Width="25"
+                            Command="{Binding DecrementAmount}"/>
+                    <TextBox Grid.Column="1" Margin="4 0" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                             Text="{Binding NewSponsorship.Amount, 
+                                StringFormat=${0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Column="2" Style="{StaticResource ButtonStyle}" Content="+" FontWeight="SemiBold"
+                            Width="25"
+                            Command="{Binding IncrementAmount}"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+                            <Setter Property="Padding" Value="8 5"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Content="Заплатить" Margin="0 0 10 0"
+                            Command="{Binding PayCommand}"/>
+                    <Button Content="Отмена" Command="{Binding GoBackCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

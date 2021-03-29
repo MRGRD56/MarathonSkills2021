@@ -14,6 +14,8 @@ namespace MarathonSkills.DesktopApp
     /// </summary>
     public partial class App : Application
     {
+        public const string BaseName = "Marathon Skills 2021";
+
         public new static MainWindow MainWindow => (MainWindow) Current.MainWindow;
     }
 }

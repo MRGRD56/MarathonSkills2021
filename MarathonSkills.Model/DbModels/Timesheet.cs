@@ -5,7 +5,7 @@ namespace MarathonSkills.Model.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     
-
+    [Table("Timesheets")]
     public partial class Timesheet
     {
         public int TimesheetId { get; set; }
