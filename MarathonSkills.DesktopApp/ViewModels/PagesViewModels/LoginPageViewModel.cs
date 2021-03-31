@@ -41,7 +41,7 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
             }
         }
 
-        public string LoginButtonText => IsAuthorizationProcess ? "Подождите..." : "Войти";
+        public string LoginButtonText => IsAuthorizationProcess ? "Вход..." : "Войти";
 
         public bool IsLoginButtonEnabled => !IsAuthorizationProcess;
 
@@ -56,6 +56,16 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
                 syncContext.Send(_ => IsAuthorizationProcess = true, null);
                 var login = Login?.ToLower()?.Trim() ?? "";
                 var password = passwordBox.Password ?? "";
+                if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+                {
+                    syncContext.Send(_ =>
+                    {
+                        IsAuthorizationProcess = false;
+                        MessageBox.Show("Введите логин и пароль.", "Авторизация", MessageBoxButton.OK,
+                                MessageBoxImage.Information);
+                    }, null);
+                    return;
+                }
                 using var db = new AppDbContext();
                 await db.Roles.LoadAsync();
                 var user = await db.Users.FirstOrDefaultAsync(x => x.Email.ToLower() == login && x.Password == password);

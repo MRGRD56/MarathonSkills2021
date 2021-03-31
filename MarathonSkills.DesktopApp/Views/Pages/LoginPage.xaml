@@ -50,7 +50,8 @@
                     <Button Content="{Binding LoginButtonText}" 
                             IsEnabled="{Binding IsLoginButtonEnabled}"
                             Command="{Binding LoginCommand}"
-                            CommandParameter="{Binding ElementName=PasswordBox}"/>
+                            CommandParameter="{Binding ElementName=PasswordBox}"
+                            Width="70"/>
                     <Button Content="Отмена" 
                             IsEnabled="{Binding IsLoginButtonEnabled}" 
                             Command="{Binding GoBackCommand}"

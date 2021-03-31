@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace MarathonSkills.Model.DbModels
 {
     using System;
@@ -29,5 +31,7 @@ namespace MarathonSkills.Model.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registrations { get; set; }
+
+        public string LogoPath => Path.Combine("/Resources/Images/CharityData/", CharityLogo);
     }
 }

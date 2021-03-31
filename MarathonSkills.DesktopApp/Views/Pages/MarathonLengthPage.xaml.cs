@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace MarathonSkills.DesktopApp.Views.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SponsorRunnerPage.xaml
+    /// Логика взаимодействия для MarathonLengthPage.xaml
     /// </summary>
-    public partial class SponsorRunnerPage : Page
+    public partial class MarathonLengthPage : Page
     {
-        public SponsorRunnerPage()
+        public MarathonLengthPage()
         {
             InitializeComponent();
-        }
-
-        private void NumericTextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            e.Handled = !Regex.IsMatch(e.Text, @"^\d*$");
         }
     }
 }

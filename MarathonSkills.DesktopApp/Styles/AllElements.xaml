@@ -2,10 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="Page" x:Key="PageStyle">
         <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
+        <Setter Property="Background" Value="White"/>
     </Style>
     <Style TargetType="Window" x:Key="WindowStyle">
         <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
         <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Background" Value="White"/>
     </Style>
 
     <Style TargetType="TextBox">

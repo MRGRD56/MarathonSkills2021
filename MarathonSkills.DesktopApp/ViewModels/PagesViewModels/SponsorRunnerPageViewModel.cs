@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using MarathonSkills.DesktopApp.Other;
 using MarathonSkills.DesktopApp.ViewModels;
 using MarathonSkills.Model.DbModels;
 using MarathonSkills.DesktopApp.Views.Pages;
+using MarathonSkills.DesktopApp.Views.Windows;
 
 namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
 {
@@ -59,6 +61,8 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
 
             if (CardCvc?.Length < 3 ||
                 CardNumber?.Length < 16 ||
+                !Regex.IsMatch(CardNumber ?? "", @"^\d{16}$") ||
+                !Regex.IsMatch(CardCvc ?? "", @"^\d{3}$") ||
                 string.IsNullOrWhiteSpace(CardOwner) ||
                 CardDate.Equals(default))
             {
@@ -82,6 +86,12 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
             Navigation.Navigate(new SponsorshipConfirmationPage(NewSponsorship));
 
         }, _ => NewSponsorship.Amount > 0);
+
+        public Command ShowCharityInfo => new(_ =>
+        {
+            var window = new CharityInfoWindow(NewSponsorship.Registration.Charity);
+            window.ShowDialog();
+        }, _ => NewSponsorship?.Registration?.Charity != null);
 
         public SponsorRunnerPageViewModel()
         {

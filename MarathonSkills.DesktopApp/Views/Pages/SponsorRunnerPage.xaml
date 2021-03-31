@@ -14,6 +14,7 @@
     </Page.DataContext>
     <Page.Resources>
         <converters:IsVisibleReversedConverter x:Key="IsVisibleReversedConverter"/>
+        <converters:CardNumberConverter x:Key="CardNumberConverter"/>
     </Page.Resources>
     <Grid>
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -72,11 +73,13 @@
                           SelectedItem="{Binding NewSponsorship.Registration}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CardOwner, 
                             UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CardNumber,
-                            UpdateSourceTrigger=PropertyChanged}"
-                            MaxLength="16"/>
+                <TextBox Grid.Row="4" Grid.Column="1" 
+                         Text="{Binding CardNumber, 
+                            UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CardNumberConverter}}"
+                         MaxLength="19"
+                         PreviewTextInput="NumericTextBox_OnPreviewTextInput"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Width="100" HorizontalAlignment="Left"
-                         Text="{Binding CardDate, StringFormat={}{0:MM/yy},
+                             Text="{Binding CardDate, StringFormat={}{0:MM/yyyy},
                             UpdateSourceTrigger=LostFocus}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Margin="0 2" Width="60" HorizontalAlignment="Left"
                          MaxLength="3"
@@ -94,7 +97,9 @@
                     <TextBlock TextAlignment="Center" VerticalAlignment="Center"
                                FontSize="15"
                                Text="{Binding NewSponsorship.Registration.Charity.CharityName}"/>
-                    <Button Grid.Column="1" Style="{StaticResource ButtonStyle}" Content="?" Width="23" FontSize="15" Padding="0"/>
+                    <Button Grid.Column="1" Style="{StaticResource ButtonStyle}" Content="❓" Width="23" FontSize="15" Padding="0"
+                            Command="{Binding ShowCharityInfo}"
+                            Margin="5 0 0 0"/>
                 </Grid>
                 <TextBlock Text="Сумма пожертвования" Style="{StaticResource Header16}" Margin="0 20 0 5"/>
                 <TextBlock Style="{StaticResource HeaderBase}" FontSize="45" Foreground="Gray"

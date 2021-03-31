@@ -67,28 +67,47 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\CardNumberConverter.cs" />
     <Compile Include="Converters\IsVisibleConverter.cs" />
     <Compile Include="Converters\IsVisibleReversedConverter.cs" />
+    <Compile Include="Extensions\SyncContextExtensions.cs" />
     <Compile Include="Other\Account.cs" />
     <Compile Include="Other\Command.cs" />
     <Compile Include="Other\Navigation.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\CharitiesListPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\MainMenuPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorshipConfirmationPageViewModel.cs" />
+    <Compile Include="ViewModels\WindowsViewModels\CharityInfoWindowViewModel.cs" />
     <Compile Include="ViewModels\WindowsViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Pages\AdministratorMainPage.xaml.cs">
       <DependentUpon>AdministratorMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\CharitiesListPage.xaml.cs">
+      <DependentUpon>CharitiesListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\CoordinatorMainPage.xaml.cs">
       <DependentUpon>CoordinatorMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\EventInfoPage.xaml.cs">
+      <DependentUpon>EventInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MarathonLengthPage.xaml.cs">
+      <DependentUpon>MarathonLengthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MoreInformationPage.xaml.cs">
+      <DependentUpon>MoreInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\PreviousResultsPage.xaml.cs">
+      <DependentUpon>PreviousResultsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\RegisterAsRunnerPage.xaml.cs">
       <DependentUpon>RegisterAsRunnerPage.xaml</DependentUpon>
@@ -101,6 +120,9 @@
     </Compile>
     <Compile Include="Views\Pages\SponsorshipConfirmationPage.xaml.cs">
       <DependentUpon>SponsorshipConfirmationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CharityInfoWindow.xaml.cs">
+      <DependentUpon>CharityInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -172,7 +194,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\CharitiesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\CoordinatorMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\EventInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +213,18 @@
     <Page Include="Views\Pages\MainMenuPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\MarathonLengthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MoreInformationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\PreviousResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\RegisterAsRunnerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -200,10 +242,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Windows\CharityInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CharityData\arise-logo.png" />
+    <Resource Include="Resources\Images\CharityData\aves-do-brazil-logo.png" />
+    <Resource Include="Resources\Images\CharityData\clara-santos-oliveira-institute-logo.png" />
+    <Resource Include="Resources\Images\CharityData\conquer-cancer-brazil.png" />
+    <Resource Include="Resources\Images\CharityData\diabetes-brazil-logo.png" />
+    <Resource Include="Resources\Images\CharityData\heart-health-sao-paulo-logo.png" />
+    <Resource Include="Resources\Images\CharityData\human-rights-centre-logo.png" />
+    <Resource Include="Resources\Images\CharityData\oxfam-international-logo.png" />
+    <Resource Include="Resources\Images\CharityData\querstadtein-logo.png" />
+    <Resource Include="Resources\Images\CharityData\save-the-children-fund-logo.png" />
+    <Resource Include="Resources\Images\CharityData\stay-pumped-logo.png" />
+    <Resource Include="Resources\Images\CharityData\the-red-cross-logo.png" />
+    <Resource Include="Resources\Images\CharityData\upbeat-logo.png" />
+    <Resource Include="Resources\Images\CharityData\wwsm-rescue-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
