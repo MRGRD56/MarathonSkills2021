@@ -12,7 +12,6 @@ using MarathonSkills.DesktopApp.Other;
 using MarathonSkills.DesktopApp.ViewModels;
 using MarathonSkills.Model.DbModels;
 using MarathonSkills.DesktopApp.Views.Pages;
-using AppContext = MarathonSkills.Context.AppContext;
 
 namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
 {
@@ -73,7 +72,7 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
                 return;
             }
 
-            var db = new AppContext();
+            var db = new AppDbContext();
 
             NewSponsorship.Registration = db.Registrations.Find(NewSponsorship.Registration.RegistrationId);
 
@@ -96,7 +95,7 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
 
         private async void LoadData()
         {
-            var db = new AppContext();
+            var db = new AppDbContext();
             await db.RegistrationEvents.LoadAsync();
             await db.Users.LoadAsync();
             var registrations = db.Registrations

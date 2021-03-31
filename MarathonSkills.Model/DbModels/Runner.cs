@@ -33,7 +33,7 @@ namespace MarathonSkills.Model.DbModels
 
         public virtual Country Country { get; set; }
 
-        public virtual Gender Gender1 { get; set; }
+        public virtual Gender GenderNavigation { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registrations { get; set; }

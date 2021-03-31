@@ -15,20 +15,16 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button Content="Я хочу стать бегуном" Style="{DynamicResource MenuButtonStyle}"
-                    Command="{Binding NavigateCommand}">
-                <Button.CommandParameter>
-                    <local:RegisterAsRunnerPage/>
-                </Button.CommandParameter>
-            </Button>
-            <Button Content="Я хочу стать спонсором бегуна" Style="{DynamicResource MenuButtonStyle}"
-                    Command="{Binding NavigateCommand}">
-                <Button.CommandParameter>
-                    <local:SponsorRunnerPage/>
-                </Button.CommandParameter>
-            </Button>
+                    Command="{Binding TypeNavigateCommand}"
+                    CommandParameter="{x:Type local:RegisterAsRunnerPage}"/>
+                <Button Content="Я хочу стать спонсором бегуна" Style="{DynamicResource MenuButtonStyle}"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:SponsorRunnerPage}"/>
             <Button Content="Я хочу узнать больше о событии" Style="{DynamicResource MenuButtonStyle}"/>
         </StackPanel>
         <Button Content="Войти" Style="{StaticResource ButtonStyle}" Width="90" Height="30"
-                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15"/>
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15"
+                Command="{Binding TypeNavigateCommand}"
+                CommandParameter="{x:Type local:LoginPage}"/>
     </Grid>
 </Page>

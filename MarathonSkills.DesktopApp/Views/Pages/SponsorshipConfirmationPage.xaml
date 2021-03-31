@@ -25,7 +25,9 @@
             <TextBlock Style="{StaticResource HeaderBase}" 
                        Text="{Binding Sponsorship.Amount, StringFormat=${0:N0}}"
                        FontSize="50" Foreground="Gray"/>
-            <Button Style="{StaticResource ButtonStyle}" Content="Назад" Width="70" Height="26" Margin="0 15 0 0"/>
+            <Button Style="{StaticResource ButtonStyle}" Content="Назад" Width="70" Height="26" Margin="0 15 0 0"
+                    Command="{Binding TypeNavigateCommand}" 
+                    CommandParameter="{x:Type local:MainMenuPage}"/>
         </StackPanel>
     </Grid>
 </Page>

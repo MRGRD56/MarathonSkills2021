@@ -69,18 +69,32 @@
     </Compile>
     <Compile Include="Converters\IsVisibleConverter.cs" />
     <Compile Include="Converters\IsVisibleReversedConverter.cs" />
+    <Compile Include="Other\Account.cs" />
     <Compile Include="Other\Command.cs" />
     <Compile Include="Other\Navigation.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\MainMenuPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorshipConfirmationPageViewModel.cs" />
     <Compile Include="ViewModels\WindowsViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Pages\AdministratorMainPage.xaml.cs">
+      <DependentUpon>AdministratorMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\CoordinatorMainPage.xaml.cs">
+      <DependentUpon>CoordinatorMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\MainMenuPage.xaml.cs">
       <DependentUpon>MainMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\RegisterAsRunnerPage.xaml.cs">
       <DependentUpon>RegisterAsRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RunnerMainPage.xaml.cs">
+      <DependentUpon>RunnerMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\SponsorRunnerPage.xaml.cs">
       <DependentUpon>SponsorRunnerPage.xaml</DependentUpon>
@@ -154,6 +168,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Pages\AdministratorMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\CoordinatorMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\MainMenuPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +187,10 @@
     <Page Include="Views\Pages\RegisterAsRunnerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\RunnerMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\SponsorRunnerPage.xaml">
       <Generator>MSBuild:Compile</Generator>

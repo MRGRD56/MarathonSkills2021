@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppContext.cs" />
+    <Compile Include="AppDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,10 @@
     <ProjectReference Include="..\MarathonSkills.Model\MarathonSkills.Model.csproj">
       <Project>{646e7327-a18f-4d57-aa34-ce522508fd06}</Project>
       <Name>MarathonSkills.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarathonSkills.Shared\MarathonSkills.Shared.csproj">
+      <Project>{4A074DE9-5653-4C65-83A6-BD1D81C4BD87}</Project>
+      <Name>MarathonSkills.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

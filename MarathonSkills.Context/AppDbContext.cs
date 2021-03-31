@@ -1,9 +1,12 @@
+using System;
 using System.Data.Entity;
+using System.Threading.Tasks;
 using MarathonSkills.Model.DbModels;
+using MarathonSkills.Shared;
 
 namespace MarathonSkills.Context
 {
-    public partial class AppContext : DbContext
+    public partial class AppDbContext : DbContext
     {
         private const string ConnectionString = "data source=localhost\\SQLEXPRESS;" +
                                                 "initial catalog=MarathonSkills;" +
@@ -11,7 +14,7 @@ namespace MarathonSkills.Context
                                                 "MultipleActiveResultSets=True;" +
                                                 "App=EntityFramework";
 
-        public AppContext() : base(ConnectionString)
+        public AppDbContext() : base(ConnectionString)
         {
         }
 
@@ -88,13 +91,13 @@ namespace MarathonSkills.Context
 
             modelBuilder.Entity<Gender>()
                 .HasMany(e => e.Runners)
-                .WithRequired(e => e.Gender1)
+                .WithRequired(e => e.GenderNavigation)
                 .HasForeignKey(e => e.Gender)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Gender>()
                 .HasMany(e => e.Volunteers)
-                .WithRequired(e => e.Gender1)
+                .WithRequired(e => e.GenderNav)
                 .HasForeignKey(e => e.Gender)
                 .WillCascadeOnDelete(false);
 

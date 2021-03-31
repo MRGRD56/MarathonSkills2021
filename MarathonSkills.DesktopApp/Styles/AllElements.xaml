@@ -7,4 +7,11 @@
         <Setter Property="FontFamily" Value="{StaticResource MainFont}"/>
         <Setter Property="FontWeight" Value="Light"/>
     </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="PasswordBox">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
 </ResourceDictionary>
