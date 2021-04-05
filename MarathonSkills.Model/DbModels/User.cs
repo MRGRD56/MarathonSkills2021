@@ -29,6 +29,8 @@ namespace MarathonSkills.Model.DbModels
         [StringLength(80)]
         public string LastName { get; set; }
 
+        public string FullName => $"{FirstName} {LastName}";
+
         [Required]
         [StringLength(1)]
         public string RoleId { get; set; }

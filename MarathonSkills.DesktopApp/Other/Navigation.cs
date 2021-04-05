@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Linq;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 using MarathonSkills.DesktopApp.Views.Pages;
 
 namespace MarathonSkills.DesktopApp.Other
@@ -12,6 +14,15 @@ namespace MarathonSkills.DesktopApp.Other
             if (App.MainWindow.Frame.CanGoBack)
             {
                 App.MainWindow.Frame.GoBack();
+            }
+        }
+
+        public static void ClearNavigationStack(int notRemovedCount = 0)
+        {
+            var count = App.MainWindow.Frame.BackStack.Cast<object>().Count();
+            for (var i = 0; i < count - notRemovedCount; i++)
+            {
+                App.MainWindow.Frame.RemoveBackEntry();
             }
         }
 

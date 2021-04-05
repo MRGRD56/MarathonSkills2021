@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using MarathonSkills.Context;
+using MarathonSkills.DesktopApp.Extensions;
 using MarathonSkills.DesktopApp.Other;
 
 namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
@@ -78,11 +79,12 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
                 }
 
                 Account.Login(user);
-                syncContext.Send(_ =>
+                syncContext.Invoke(() =>
                 {
                     IsAuthorizationProcess = false;
                     Navigation.Navigate(Account.GetUserNewMainPage());
-                }, null);
+                    Navigation.ClearNavigationStack(1);
+                });
             });
         });
     }

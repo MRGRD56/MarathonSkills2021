@@ -24,5 +24,13 @@ namespace MarathonSkills.Model.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
+
+        public string RoleRussian => RoleId switch
+        {
+            "A" => "Администратор",
+            "C" => "Координатор",
+            "R" => "Бегун",
+            _ => ""
+        };
     }
 }

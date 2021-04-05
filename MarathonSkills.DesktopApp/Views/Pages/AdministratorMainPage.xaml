@@ -4,11 +4,62 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MarathonSkills.DesktopApp.Views.Pages"
+      xmlns:viewModels="clr-namespace:MarathonSkills.DesktopApp.ViewModels"
       mc:Ignorable="d" Style="{StaticResource PageStyle}"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Меню (администратор)">
-
+      Title="Меню администратора">
+    <Page.DataContext>
+        <viewModels:BaseViewModel/>
+    </Page.DataContext>
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource Header20}" Text="Меню бегуна" Margin="100 0 100 30"
+                       HorizontalAlignment="Center"/>
+            <Grid IsSharedSizeScope="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition SharedSizeGroup="Row"/>
+                    <RowDefinition SharedSizeGroup="Row"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="Column"/>
+                    <ColumnDefinition SharedSizeGroup="Column"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource MenuButtonStyle}">
+                        <Setter Property="Padding" Value="40 12"/>
+                        <Setter Property="FontStyle" Value="Italic"/>
+                    </Style>
+                </Grid.Resources>
+                <Button Grid.Row="0" Grid.Column="0"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:RegisterForEventPage}">
+                    <TextBlock TextAlignment="Center">
+                        Пользователи
+                    </TextBlock>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:MyRaceResultsPage}">
+                    <TextBlock TextAlignment="Center">
+                        Волонтёры
+                    </TextBlock>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="0"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:EditRunnerProfilePage}">
+                    <TextBlock TextAlignment="Center">
+                        Благотворительные<LineBreak/>
+                        организации
+                    </TextBlock>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="1"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:MySponsorshipPage}">
+                    <TextBlock TextAlignment="Center">
+                        Инвентарь
+                    </TextBlock>
+                </Button>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

@@ -8,6 +8,7 @@
     <Color x:Key="LightGray" A="255" R="253" G="253" B="253"/>
     <Color x:Key="Gray" A="255" R="180" G="180" B="180"/>
     <Color x:Key="DarkGray" A="255" R="80" G="80" B="80"/>
+    <Color x:Key="DarkGrayLight" A="255" R="95" G="95" B="95"/>
 
     <SolidColorBrush x:Key="BrazilianGreenBrush" Color="{StaticResource BrazilianGreen}"/>
     <SolidColorBrush x:Key="BrazilianYellowBrush" Color="{StaticResource BrazilianYellow}"/>
@@ -17,4 +18,5 @@
     <SolidColorBrush x:Key="LightGrayBrush" Color="{StaticResource LightGray}"/>
     <SolidColorBrush x:Key="GrayBrush" Color="{StaticResource Gray}"/>
     <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGray}"/>
+    <SolidColorBrush x:Key="DarkGrayLightBrush" Color="{StaticResource DarkGrayLight}"/>
 </ResourceDictionary>

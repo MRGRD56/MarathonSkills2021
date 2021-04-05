@@ -4,11 +4,43 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MarathonSkills.DesktopApp.Views.Pages"
+      xmlns:viewModels="clr-namespace:MarathonSkills.DesktopApp.ViewModels"
       mc:Ignorable="d" Style="{StaticResource PageStyle}"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Меню (координатор)">
-
+      Title="Меню координатора">
+    <Page.DataContext>
+        <viewModels:BaseViewModel/>
+    </Page.DataContext>
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 130">
+            <TextBlock Style="{StaticResource Header20}" Text="Меню координатора" Margin="100 0 100 30"
+                       HorizontalAlignment="Center"/>
+            <Grid IsSharedSizeScope="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource MenuButtonStyle}">
+                        <Setter Property="Padding" Value="40 20"/>
+                        <Setter Property="FontStyle" Value="Italic"/>
+                    </Style>
+                </Grid.Resources>
+                <Button Grid.Row="0" Grid.Column="0"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:RegisterForEventPage}">
+                    <TextBlock TextAlignment="Center">
+                        Бегуны
+                    </TextBlock>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1"
+                        Command="{Binding TypeNavigateCommand}"
+                        CommandParameter="{x:Type local:MyRaceResultsPage}">
+                    <TextBlock TextAlignment="Center">
+                        Спонсоры
+                    </TextBlock>
+                </Button>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

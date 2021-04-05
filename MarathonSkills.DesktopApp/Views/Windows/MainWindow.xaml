@@ -9,7 +9,9 @@
         mc:Ignorable="d" 
         Style="{StaticResource WindowStyle}"
         WindowStartupLocation="CenterScreen"
-        Title="MarathonSkills 2021" Height="450" Width="800">
+        Title="MarathonSkills 2021" 
+        Height="450" Width="800"
+        MinHeight="450" MinWidth="800">
     <Window.DataContext>
         <windowsViewModels:MainWindowViewModel/>
     </Window.DataContext>
@@ -36,15 +38,68 @@
                     четверг 21 октября 2021
                 </TextBlock>
             </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" 
+                        Visibility="{Binding IsAuthorized, 
+                        Converter={StaticResource IsVisibleConverter}}"
+                        Margin="0 0 15 15">
+                <TextBlock Text="{Binding CurrentUser.FullName}"
+                           HorizontalAlignment="Right"
+                           Style="{StaticResource Header16}"
+                           Foreground="#eeeeee" Margin="0 10 0 0"/>
+                <TextBlock Text="{Binding CurrentUser.Role.RoleRussian}"
+                           HorizontalAlignment="Right"
+                           Foreground="#eaeaea"
+                           FontSize="13"/>
+                <Button Margin="0 10 0 0" Content="Выйти"
+                        Style="{StaticResource DarkButtonStyle}" Width="90" Height="30"
+                        Command="{Binding LogoutCommand}"
+                        HorizontalAlignment="Right"/>
+            </StackPanel>
         </Grid>
 
         <Grid Grid.Row="0" Background="{StaticResource DarkGrayBrush}"
-              Visibility="{Binding IsSmallHeaderVisible, Converter={StaticResource IsVisibleConverter}}">
+              Visibility="{Binding IsSmallHeaderVisible, 
+                Converter={StaticResource IsVisibleConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" Margin="5 1" VerticalAlignment="Center">
-                <Button Content="Назад" Style="{StaticResource ButtonStyle}" Height="25"
+                <Button Content="Назад" Style="{StaticResource DarkButtonStyle}" Height="25"
                         Command="{Binding GoBackCommand}"/>
                 <Label Content="MARATHON SKILLS 2021" Margin="15 0 0 0" Foreground="White"
                        FontWeight="SemiBold" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                        Visibility="{Binding IsAuthorized, 
+                        Converter={StaticResource IsVisibleConverter}}"
+                        Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right"
+                            Cursor="Hand"
+                            ToolTip="Перейти в моё меню">
+                    <StackPanel.InputBindings>
+                        <MouseBinding MouseAction="LeftClick"
+                                      Command="{Binding NavigateToProfileCommand}"/>
+                    </StackPanel.InputBindings>
+                    <TextBlock Text="{Binding CurrentUser.FullName}"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource Header16}"
+                               FontWeight="Medium"
+                               Foreground="#eeeeee" Margin="0 -2 0 0"
+                               TextAlignment="Right"/>
+                    <TextBlock Text="{Binding CurrentUser.Role.RoleRussian}"
+                               VerticalAlignment="Center"
+                               Foreground="#eaeaea"
+                               FontSize="13"
+                               Margin="0 -3 0 0"
+                               TextAlignment="Right"/>
+                </StackPanel>
+
+                <Button Content="Выйти" Height="25" Margin="10 0 5 0"
+                        Style="{StaticResource DarkButtonStyle}"
+                        Command="{Binding LogoutCommand}"
+                        VerticalAlignment="Center"/>
             </StackPanel>
         </Grid>
 

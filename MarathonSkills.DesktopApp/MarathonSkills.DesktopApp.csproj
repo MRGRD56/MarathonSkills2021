@@ -91,6 +91,9 @@
     <Compile Include="Views\Pages\CoordinatorMainPage.xaml.cs">
       <DependentUpon>CoordinatorMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\EditRunnerProfilePage.xaml.cs">
+      <DependentUpon>EditRunnerProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\EventInfoPage.xaml.cs">
       <DependentUpon>EventInfoPage.xaml</DependentUpon>
     </Compile>
@@ -106,11 +109,20 @@
     <Compile Include="Views\Pages\MoreInformationPage.xaml.cs">
       <DependentUpon>MoreInformationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\MyRaceResultsPage.xaml.cs">
+      <DependentUpon>MyRaceResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MySponsorshipPage.xaml.cs">
+      <DependentUpon>MySponsorshipPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\PreviousResultsPage.xaml.cs">
       <DependentUpon>PreviousResultsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\RegisterAsRunnerPage.xaml.cs">
       <DependentUpon>RegisterAsRunnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RegisterForEventPage.xaml.cs">
+      <DependentUpon>RegisterForEventPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\RunnerMainPage.xaml.cs">
       <DependentUpon>RunnerMainPage.xaml</DependentUpon>
@@ -123,6 +135,9 @@
     </Compile>
     <Compile Include="Views\Windows\CharityInfoWindow.xaml.cs">
       <DependentUpon>CharityInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ContactsInfoWindow.xaml.cs">
+      <DependentUpon>ContactsInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -202,6 +217,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\EditRunnerProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\EventInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,6 +241,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\MyRaceResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MySponsorshipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\PreviousResultsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -229,6 +256,10 @@
     <Page Include="Views\Pages\RegisterAsRunnerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\RegisterForEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\RunnerMainPage.xaml">
       <SubType>Designer</SubType>
@@ -243,6 +274,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Windows\CharityInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ContactsInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
