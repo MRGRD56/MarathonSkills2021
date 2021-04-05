@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using MarathonSkills.DesktopApp.Other;
+using MarathonSkills.DesktopApp.ViewModels.WindowsViewModels;
 using MarathonSkills.DesktopApp.Views.Pages;
-using MarathonSkills2021.ViewModels.WindowsViewModels;
 
 namespace MarathonSkills.DesktopApp.Views.Windows
 {

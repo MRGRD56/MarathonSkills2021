@@ -18,14 +18,16 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="272">
             <Button Content="Я участвовал ранее" Style="{DynamicResource MenuButtonStyle}"
                     FontStyle="Italic"
-                    Command="{Binding TypeNavigateCommand}"
+                    Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:LoginPage}"/>
             <Button Content="Я новый участник" Style="{DynamicResource MenuButtonStyle}"
-                    FontStyle="Italic"/>
+                    FontStyle="Italic"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:RunnerRegistrationPage}"/>
         </StackPanel>
         <Button Content="Войти" Style="{StaticResource ButtonStyle}" Width="90" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15"
-                Command="{Binding TypeNavigateCommand}"
+                Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local:LoginPage}"
                 Visibility="{Binding IsNotAuthorized, 
                     Converter={StaticResource VisibilityConverter}}"/>

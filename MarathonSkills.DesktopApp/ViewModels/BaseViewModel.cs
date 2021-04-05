@@ -23,7 +23,7 @@ namespace MarathonSkills.DesktopApp.ViewModels
         /// <summary>
         /// Осуществляет навигацию к экземпляру страницы.
         /// </summary>
-        public Command NavigateCommand => new(o =>
+        public Command NavigateToInstanceCommand => new(o =>
         {
             if (o is Page page)
             {
@@ -38,7 +38,7 @@ namespace MarathonSkills.DesktopApp.ViewModels
         /// <summary>
         /// Осуществляет навигацию. В качестве параметра принимает <see cref="Type"/> страницы.
         /// </summary>
-        public Command TypeNavigateCommand => new(o =>
+        public Command NavigateCommand => new(o =>
         {
             if (o is Type type)
             {
@@ -54,6 +54,36 @@ namespace MarathonSkills.DesktopApp.ViewModels
             {
                 throw new ArgumentException("Object is not a Type", "CommandParameter");
             }
+        });
+
+        private static Window GetNewWindow(object o)
+        {
+            if (o is Type type)
+            {
+                var newObject = Activator.CreateInstance(type);
+                if (newObject is not Window window)
+                {
+                    throw new ArgumentException("CommandParameter type is not inherited from Window", "CommandParameter");
+                }
+
+                return window;
+            }
+            else
+            {
+                throw new ArgumentException("Object is not a Type", "CommandParameter");
+            }
+        }
+
+        public Command ShowWindowCommand => new(o =>
+        {
+            var window = GetNewWindow(o);
+            window.Show();
+        });
+
+        public Command ShowDialogWindowCommand => new(o =>
+        {
+            var window = GetNewWindow(o);
+            window.ShowDialog();
         });
 
         public User CurrentUser

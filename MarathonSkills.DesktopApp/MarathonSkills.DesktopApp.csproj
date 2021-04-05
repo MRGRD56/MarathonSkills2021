@@ -78,6 +78,7 @@
     <Compile Include="ViewModels\PagesViewModels\CharitiesListPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\MainMenuPageViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\RunnerRegistrationPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorshipConfirmationPageViewModel.cs" />
     <Compile Include="ViewModels\WindowsViewModels\CharityInfoWindowViewModel.cs" />
@@ -126,6 +127,9 @@
     </Compile>
     <Compile Include="Views\Pages\RunnerMainPage.xaml.cs">
       <DependentUpon>RunnerMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RunnerRegistrationPage.xaml.cs">
+      <DependentUpon>RunnerRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\SponsorRunnerPage.xaml.cs">
       <DependentUpon>SponsorRunnerPage.xaml</DependentUpon>
@@ -262,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\RunnerMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\RunnerRegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

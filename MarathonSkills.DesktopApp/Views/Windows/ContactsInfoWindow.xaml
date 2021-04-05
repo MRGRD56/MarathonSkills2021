@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MarathonSkills.DesktopApp.Views.Windows"
         mc:Ignorable="d" Style="{StaticResource WindowStyle}"
         WindowStartupLocation="CenterScreen"
-        Title="Контакты" Height="250" Width="500">
+        Title="Контакты" Height="230" Width="400" ResizeMode="NoResize">
     <StackPanel>
         <TextBlock Style="{StaticResource Header16}" Text="Контакты" Margin="0 15 0 25"/>
         <TextBlock FontSize="13" TextWrapping="Wrap" Margin="10 5">

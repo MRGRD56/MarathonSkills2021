@@ -19,7 +19,7 @@ namespace MarathonSkills.Model.DbModels
         [Key]
         [Column("Gender")]
         [StringLength(10)]
-        public string Gender1 { get; set; }
+        public string GenderName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Runner> Runners { get; set; }

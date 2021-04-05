@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace MarathonSkills.Model.DbModels
 {
     using System;
@@ -26,6 +28,28 @@ namespace MarathonSkills.Model.DbModels
         public string Gender { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
+
+        public int? Age
+        {
+            get
+            {
+                if (!DateOfBirth.HasValue) return null;
+                var birthDate = DateOfBirth.Value is { Day: 29, Month: 2 } //C# 9
+                    ? DateOfBirth.Value.AddDays(1)
+                    : DateOfBirth.Value;
+
+                var age = -1;
+                for (var date = birthDate; date <= DateTime.Today; date = date.AddDays(1))
+                {
+                    if (date.Day == birthDate.Day && date.Month == birthDate.Month)
+                    {
+                        age++;
+                    }
+                }
+
+                return age;
+            }
+        }
 
         [Required]
         [StringLength(3)]

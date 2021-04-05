@@ -27,14 +27,14 @@
                     </Style>
                 </Grid.Resources>
                 <Button Grid.Row="0" Grid.Column="0"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:RegisterForEventPage}">
                     <TextBlock TextAlignment="Center">
                         Бегуны
                     </TextBlock>
                 </Button>
                 <Button Grid.Row="0" Grid.Column="1"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:MyRaceResultsPage}">
                     <TextBlock TextAlignment="Center">
                         Спонсоры

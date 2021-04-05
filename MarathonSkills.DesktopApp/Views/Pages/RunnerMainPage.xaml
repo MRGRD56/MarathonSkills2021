@@ -7,6 +7,7 @@
       xmlns:viewModels="clr-namespace:MarathonSkills.DesktopApp.ViewModels"
       mc:Ignorable="d" Style="{StaticResource PageStyle}"
       d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:windows="clr-namespace:MarathonSkills.DesktopApp.Views.Windows"
       Title="Меню бегуна">
     <Page.DataContext>
         <viewModels:BaseViewModel/>
@@ -32,7 +33,7 @@
                     </Style>
                 </Grid.Resources>
                 <Button Grid.Row="0" Grid.Column="0"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:RegisterForEventPage}">
                     <TextBlock TextAlignment="Center">
                         Регистрация на <LineBreak/>
@@ -40,14 +41,14 @@
                     </TextBlock>
                 </Button>
                 <Button Grid.Row="0" Grid.Column="1"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:MyRaceResultsPage}">
                     <TextBlock TextAlignment="Center">
                         Мои результаты
                     </TextBlock>
                 </Button>
                 <Button Grid.Row="1" Grid.Column="0"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:EditRunnerProfilePage}">
                     <TextBlock TextAlignment="Center">
                         Редактирование<LineBreak/>
@@ -55,13 +56,15 @@
                     </TextBlock>
                 </Button>
                 <Button Grid.Row="1" Grid.Column="1"
-                        Command="{Binding TypeNavigateCommand}"
+                        Command="{Binding NavigateCommand}"
                         CommandParameter="{x:Type local:MySponsorshipPage}">
                     <TextBlock TextAlignment="Center">
                         Мой спонсор 
                     </TextBlock>
                 </Button>
-                <Button Grid.Row="2" Grid.Column="0">
+                <Button Grid.Row="2" Grid.Column="0"
+                        Command="{Binding ShowDialogWindowCommand}"
+                        CommandParameter="{x:Type windows:ContactsInfoWindow}">
                     <TextBlock TextAlignment="Center">
                         Контакты
                     </TextBlock>
