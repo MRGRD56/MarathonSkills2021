@@ -32,9 +32,9 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="Логин: "/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Login}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Login}" Name="LoginTextBox" Style="{StaticResource LineTextBox}"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="Пароль: " Margin="0 15"/>
-                <PasswordBox Grid.Row="1" Grid.Column="1" Margin="0 15" Name="PasswordBox">
+                <PasswordBox Grid.Row="1" Grid.Column="1" Margin="0 15" Name="PasswordBox" Style="{StaticResource LinePasswordBox}">
                     <PasswordBox.InputBindings>
                         <KeyBinding Key="Enter" 
                                     Command="{Binding LoginCommand}"

@@ -24,5 +24,19 @@ namespace MarathonSkills.Model.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Event> Events { get; set; }
+
+        public string EventTypeNameLocalized
+        {
+            get
+            {
+                return EventTypeId switch
+                {
+                    "FM" => "42km Полный марафон ($145)",
+                    "FR" => "21km Полу марафон ($75)",
+                    "HM" => "5km Малая дистанция ($20)",
+                    _ => ""
+                };
+            }
+        }
     }
 }

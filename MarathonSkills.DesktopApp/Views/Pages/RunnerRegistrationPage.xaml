@@ -78,7 +78,7 @@
                     <ComboBox Grid.Row="0" Grid.Column="1"
                               ItemsSource="{Binding Genders}"
                               DisplayMemberPath="GenderName"
-                              SelectedItem="{Binding NewRunner.GenderNavigation}"/>
+                              SelectedItem="{Binding NewRunner.Gender}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="Дата рождения: "/>
                     <DatePicker Grid.Row="1" Grid.Column="1"
                                 SelectedDate="{Binding NewRunner.DateOfBirth}"/>

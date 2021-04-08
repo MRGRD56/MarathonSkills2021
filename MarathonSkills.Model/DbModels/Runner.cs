@@ -25,7 +25,8 @@ namespace MarathonSkills.Model.DbModels
 
         [Required]
         [StringLength(10)]
-        public string Gender { get; set; }
+        [Column("Gender")]
+        public string GenderCode { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
 
@@ -57,7 +58,8 @@ namespace MarathonSkills.Model.DbModels
 
         public virtual Country Country { get; set; }
 
-        public virtual Gender GenderNavigation { get; set; }
+        [ForeignKey("Gender")]
+        public virtual Gender Gender { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registrations { get; set; }

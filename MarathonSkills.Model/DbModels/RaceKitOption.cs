@@ -21,11 +21,21 @@ namespace MarathonSkills.Model.DbModels
         [Column("RaceKitOption")]
         [Required]
         [StringLength(80)]
-        public string RaceKitOption1 { get; set; }
+        public string Name { get; set; }
 
         public decimal Cost { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Registration> Registrations { get; set; }
+
+        public string NameLocalized => RaceKitOptionId switch
+        {
+            "A" => "Номер бегуна+ RFID браслет.",
+            "B" => "Вариант A + бейсболка + бутылка воды",
+            "C" => "Вариант B +футболка + сувенирный буклет.",
+            _ => ""
+        };
+
+        public string FullNameLocalized => $"Вариант {RaceKitOptionId} (${Cost:N0}): {NameLocalized}";  
     }
 }

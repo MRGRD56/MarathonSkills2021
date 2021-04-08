@@ -37,6 +37,9 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CheckLib">
+      <HintPath>..\..\CheckLib\CheckLib\bin\Debug\netstandard2.0\CheckLib.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
     <Compile Include="ViewModels\PagesViewModels\CharitiesListPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\MainMenuPageViewModel.cs" />
+    <Compile Include="ViewModels\PagesViewModels\RegisterForEventPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\RunnerRegistrationPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorRunnerPageViewModel.cs" />
     <Compile Include="ViewModels\PagesViewModels\SponsorshipConfirmationPageViewModel.cs" />
@@ -204,6 +208,10 @@
     <Page Include="Styles\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Other.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Text.xaml">
       <Generator>MSBuild:Compile</Generator>

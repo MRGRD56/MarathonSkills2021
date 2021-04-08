@@ -23,6 +23,7 @@ namespace MarathonSkills.DesktopApp.Views.Pages
         public LoginPage()
         {
             InitializeComponent();
+            LoginTextBox.Focus();
         }
     }
 }

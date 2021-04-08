@@ -3,6 +3,9 @@
     <Color x:Key="BrazilianGreen" A="255" R="0" G="144" B="0"/>
     <Color x:Key="BrazilianYellow" A="255" R="253" G="193" B="0"/>
     <Color x:Key="BrazilianBlue" A="255" R="36" G="29" B="112"/>
+    
+    <Color x:Key="BrazilianGreenLight" A="50" R="0" G="144" B="0"/>
+    <Color x:Key="BrazilianBlueLight" A="50" R="36" G="29" B="112"/>
 
     <Color x:Key="ButtonGray" A="255" R="242" G="242" B="242"/>
     <Color x:Key="LightGray" A="255" R="253" G="253" B="253"/>

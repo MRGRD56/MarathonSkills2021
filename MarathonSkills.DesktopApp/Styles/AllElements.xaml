@@ -16,4 +16,12 @@
     <Style TargetType="PasswordBox">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
+
+    <Style TargetType="Control" x:Key="FormControl">
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="FormLabel" BasedOn="{StaticResource FormControl}">
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+    </Style>
 </ResourceDictionary>

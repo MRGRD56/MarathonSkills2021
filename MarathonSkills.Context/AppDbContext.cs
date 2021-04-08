@@ -91,8 +91,8 @@ namespace MarathonSkills.Context
 
             modelBuilder.Entity<Gender>()
                 .HasMany(e => e.Runners)
-                .WithRequired(e => e.GenderNavigation)
-                .HasForeignKey(e => e.Gender)
+                .WithRequired(e => e.Gender)
+                .HasForeignKey(e => e.GenderCode)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Gender>()
