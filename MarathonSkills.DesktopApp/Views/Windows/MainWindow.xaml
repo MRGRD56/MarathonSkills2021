@@ -51,7 +51,7 @@
                            Foreground="#eaeaea"
                            FontSize="13"/>
                 <Button Margin="0 10 0 0" Content="Выйти"
-                        Style="{StaticResource DarkButtonStyle}" Width="90" Height="30"
+                        Style="{StaticResource DarkPrimaryButtonStyle}" Width="90" Height="30"
                         Command="{Binding LogoutCommand}"
                         HorizontalAlignment="Right"/>
             </StackPanel>
@@ -66,7 +66,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" Margin="5 1" VerticalAlignment="Center">
-                <Button Content="Назад" Style="{StaticResource DarkButtonStyle}" Height="25"
+                <Button Content="Назад" Style="{StaticResource DarkPrimaryButtonStyle}" Height="25"
                         Command="{Binding GoBackCommand}"/>
                 <Label Content="MARATHON SKILLS 2021" Margin="15 0 0 0" Foreground="White"
                        FontWeight="SemiBold" FontSize="20"/>
@@ -97,7 +97,7 @@
                 </StackPanel>
 
                 <Button Content="Выйти" Height="25" Margin="10 0 5 0"
-                        Style="{StaticResource DarkButtonStyle}"
+                        Style="{StaticResource DarkPrimaryButtonStyle}"
                         Command="{Binding LogoutCommand}"
                         VerticalAlignment="Center"/>
             </StackPanel>

@@ -53,9 +53,13 @@
                     <Style TargetType="Label" BasedOn="{StaticResource MarginStyle}">
                         <Setter Property="HorizontalContentAlignment" Value="Right"/>
                     </Style>
-                    <Style TargetType="TextBox" BasedOn="{StaticResource MarginStyle}"/>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource LineTextBox}">
+                        <Setter Property="Margin" Value="0 2"/>
+                    </Style>
                     <Style TargetType="PasswordBox" BasedOn="{StaticResource MarginStyle}"/>
-                    <Style TargetType="ComboBox" BasedOn="{StaticResource MarginStyle}"/>
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource LineComboBox}">
+                        <Setter Property="Margin" Value="0 2"/>
+                    </Style>
                 </Grid.Resources>
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Информация о спонсоре"
                        Style="{StaticResource Header16}"/>
@@ -97,7 +101,7 @@
                     <TextBlock TextAlignment="Center" VerticalAlignment="Center"
                                FontSize="15"
                                Text="{Binding NewSponsorship.Registration.Charity.CharityName}"/>
-                    <Button Grid.Column="1" Style="{StaticResource ButtonStyle}" Content="❓" Width="23" FontSize="15" Padding="0"
+                    <Button Grid.Column="1" Style="{StaticResource PrimaryOutlineButtonStyle}" Content="?" Width="23" FontSize="15" Padding="0"
                             Command="{Binding ShowCharityInfo}"
                             Margin="5 0 0 0"/>
                 </Grid>
@@ -110,25 +114,21 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Style="{StaticResource ButtonStyle}" Content="_" FontWeight="SemiBold" Padding="6 -10 6 0"
-                            Width="25"
-                            Command="{Binding DecrementAmount}"/>
+                    <Button Grid.Column="0" Style="{StaticResource PrimaryOutlineButtonStyle}" Content="➖" FontSize="11"
+                            Command="{Binding DecrementAmount}"
+                            Padding="6 5"/>
                     <TextBox Grid.Column="1" Margin="4 0" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                              Text="{Binding NewSponsorship.Amount, 
-                                StringFormat=${0:N0}, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Grid.Column="2" Style="{StaticResource ButtonStyle}" Content="+" FontWeight="SemiBold"
-                            Width="25"
+                                StringFormat=${0:N0}, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource LineTextBox}"/>
+                    <Button Grid.Column="2" Style="{StaticResource PrimaryOutlineButtonStyle}" Content="➕" FontSize="11"
+                            Padding="6 5"
                             Command="{Binding IncrementAmount}"/>
                 </Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
-                    <StackPanel.Resources>
-                        <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
-                            <Setter Property="Padding" Value="8 5"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    <Button Content="Заплатить" Margin="0 0 10 0"
-                            Command="{Binding PayCommand}"/>
-                    <Button Content="Отмена" Command="{Binding GoBackCommand}"/>
+                    <Button Content="ЗАПЛАТИТЬ" Margin="0 0 10 0"
+                            Command="{Binding PayCommand}" Style="{StaticResource PrimaryButtonStyle}"/>
+                    <Button Content="ОТМЕНА" Command="{Binding GoBackCommand}" Style="{StaticResource LightPrimaryButtonStyle}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

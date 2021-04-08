@@ -30,110 +30,60 @@
         <Setter Property="Margin" Value="0 1 0 10"/>
     </Style>
 
-    <Style TargetType="TextBox" x:Key="LineTextBox">
-        <Setter Property="Foreground" Value="#424242"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="3 0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                    <Grid>
-                        <Border x:Name="border" 
-                                    BorderBrush="#9e9e9e" 
+    <ControlTemplate x:Key="LineTextBoxTemplate" TargetType="{x:Type Control}">
+        <Grid>
+            <Border x:Name="border" BorderBrush="#9e9e9e" 
                                     BorderThickness="0 0 0 1" 
                                     Background="Transparent" 
                                     SnapsToDevicePixels="True"
-                                    Margin="0 0 0 -2">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <Border BorderThickness="0 0 0 2" Grid.Column="1" Margin="0 0 0 -1.5" BorderBrush="#2196f3" x:Name="bottomBorder"
+                                    Margin="0">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <Border BorderThickness="0 0 0 2" Grid.Column="1" Margin="0 0 0 -0.5" BorderBrush="#2196f3" x:Name="bottomBorder"
                                 RenderTransformOrigin="0.5,0.5">
-                            <Border.RenderTransform>
-                                <ScaleTransform ScaleX="0"/>
-                            </Border.RenderTransform>
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#2196f3"/>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
-                                        <DoubleAnimation From="0" To="1"
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="0"/>
+                </Border.RenderTransform>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="#2196f3"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
+                            <DoubleAnimation From="0" To="1"
                                                          Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
-                                        <DoubleAnimation From="1" To="0"
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
+                            <DoubleAnimation From="1" To="0"
                                                          Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="TextBox" x:Key="LineTextBox">
+        <Setter Property="Foreground" Value="#424242"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="2 0"/>
+        <Setter Property="Template" Value="{StaticResource LineTextBoxTemplate}"/>
     </Style>
     <Style TargetType="PasswordBox" x:Key="LinePasswordBox">
         <Setter Property="Foreground" Value="#424242"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="3 0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type PasswordBox}">
-                    <Grid>
-                        <Border x:Name="border" 
-                                    BorderBrush="#9e9e9e" 
-                                    BorderThickness="0 0 0 1" 
-                                    Background="Transparent" 
-                                    SnapsToDevicePixels="True"
-                                    Margin="0 0 0 -2">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <Border BorderThickness="0 0 0 2" Grid.Column="1" Margin="0 0 0 -1.5" BorderBrush="#2196f3" x:Name="bottomBorder"
-                                RenderTransformOrigin="0.5,0.5">
-                            <Border.RenderTransform>
-                                <ScaleTransform ScaleX="0"/>
-                            </Border.RenderTransform>
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#2196f3"/>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
-                                        <DoubleAnimation From="0" To="1"
-                                                         Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetProperty="RenderTransform.ScaleX" TargetName="bottomBorder">
-                                        <DoubleAnimation From="1" To="0"
-                                                         Duration="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Padding" Value="2 0"/>
+        <Setter Property="Template" Value="{StaticResource LineTextBoxTemplate}"/>
     </Style>
 </ResourceDictionary>

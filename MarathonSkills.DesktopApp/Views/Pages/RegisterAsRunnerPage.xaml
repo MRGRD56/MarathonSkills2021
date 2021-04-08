@@ -16,16 +16,16 @@
     </Page.Resources>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="272">
-            <Button Content="Я участвовал ранее" Style="{DynamicResource MenuButtonStyle}"
+            <Button Content="Я участвовал ранее" Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
                     FontStyle="Italic"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:LoginPage}"/>
-            <Button Content="Я новый участник" Style="{DynamicResource MenuButtonStyle}"
+            <Button Content="Я новый участник" Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
                     FontStyle="Italic"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:RunnerRegistrationPage}"/>
         </StackPanel>
-        <Button Content="Войти" Style="{StaticResource ButtonStyle}" Width="90" Height="30"
+        <Button Content="ВОЙТИ" Style="{StaticResource PrimaryButtonStyle}" Width="90" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local:LoginPage}"

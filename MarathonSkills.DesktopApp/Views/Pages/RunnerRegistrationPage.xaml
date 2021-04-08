@@ -31,10 +31,16 @@
                     <Style TargetType="Label" BasedOn="{StaticResource FormControl}">
                         <Setter Property="HorizontalContentAlignment" Value="Right"/>
                     </Style>
-                    <Style TargetType="TextBox" BasedOn="{StaticResource TextField}"/>
-                    <Style TargetType="PasswordBox" BasedOn="{StaticResource TextField}"/>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource LineTextBox}">
+                        <Setter Property="Margin" Value="0 5"/>
+                    </Style>
+                    <Style TargetType="PasswordBox" BasedOn="{StaticResource LinePasswordBox}">
+                        <Setter Property="Margin" Value="0 5"/>
+                    </Style>
                     <Style TargetType="DatePicker" BasedOn="{StaticResource TextField}"/>
-                    <Style TargetType="ComboBox" BasedOn="{StaticResource TextField}"/>
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource LineComboBox}">
+                        <Setter Property="Margin" Value="0 5"/>
+                    </Style>
                 </Grid.Resources>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -90,15 +96,10 @@
                 </Grid>
             </Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 5">
-                <StackPanel.Resources>
-                    <Style BasedOn="{StaticResource ButtonStyle}" TargetType="Button">
-                        <Setter Property="Margin" Value="5 0"/>
-                    </Style>
-                </StackPanel.Resources>
-                <Button Content="Регистрация"
+                <Button Content="РЕГИСТРАЦИЯ" Style="{StaticResource PrimaryButtonStyle}"
                         Command="{Binding RegistrationCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Page, Mode=FindAncestor}}"/>
-                <Button Content="Отмена"
+                <Button Content="ОТМЕНА" Style="{StaticResource LightPrimaryButtonStyle}" Margin="15 0 0 0"
                         Command="{Binding GoBackCommand}"/>
             </StackPanel>
         </StackPanel>

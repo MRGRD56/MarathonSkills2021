@@ -58,21 +58,18 @@
                         </Grid.RowDefinitions>
                         <Grid.Resources>
                             <Style TargetType="Label" BasedOn="{StaticResource FormLabel}"/>
-                            <Style TargetType="TextBox" BasedOn="{StaticResource FormControl}"/>
+                            <Style TargetType="TextBox" BasedOn="{StaticResource LineTextBox}"/>
                             <Style TargetType="ComboBox" BasedOn="{StaticResource FormControl}"/>
                         </Grid.Resources>
                         <Label Content="Взнос: "/>
-                        <ComboBox Grid.Row="0" Grid.Column="1"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource LineComboBox}" Margin="2"/>
                         <Label Content="Сумма взноса: " Grid.Row="1"/>
-                        <TextBox Grid.Row="1" Grid.Column="1"/>
-                        <Button Grid.Column="2" Style="{StaticResource ButtonStyle}" Content="i" Width="20" Height="20" Margin="5 0 0 0" Padding="0 -2 0 0"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="2"/>
+                        <Button Grid.Column="2" Style="{StaticResource PrimaryOutlineButtonStyle}" Content="i" Width="20" Height="20" Margin="5 0 0 0" Padding="0"/>
                     </Grid>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="30 15 0 0">
-                        <StackPanel.Resources>
-                            <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}"/>
-                        </StackPanel.Resources>
-                        <Button Content="Регистрация"/>
-                        <Button Content="Отмена" Margin="8 0 0 0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+                        <Button Content="РЕГИСТРАЦИЯ" Style="{StaticResource PrimaryButtonStyle}"/>
+                        <Button Content="ОТМЕНА" Margin="8 0 0 0" Style="{StaticResource LightPrimaryButtonStyle}"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Column="2">
@@ -93,8 +90,8 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
 
-                    <TextBlock Text="Регистрационный взнос" Style="{StaticResource Header16}"/>
-                    <TextBlock Text="$185" Style="{StaticResource HeaderBase}" FontSize="50" FontWeight="SemiBold"/>
+                    <TextBlock Text="Регистрационный взнос" Style="{StaticResource Header16}" Margin="0 8 0 0"/>
+                    <TextBlock Text="$185" Style="{StaticResource HeaderBase}" FontSize="50" FontWeight="SemiBold" Margin="0"/>
                 </StackPanel>
             </Grid>
         </Grid>

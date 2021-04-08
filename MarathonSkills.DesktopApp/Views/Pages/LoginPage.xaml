@@ -42,19 +42,16 @@
                     </PasswordBox.InputBindings>
                 </PasswordBox>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-                    <StackPanel.Resources>
-                        <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
-                            <Setter Property="Padding" Value="12 5"/>
-                        </Style>
-                    </StackPanel.Resources>
                     <Button Content="{Binding LoginButtonText}" 
                             IsEnabled="{Binding IsLoginButtonEnabled}"
                             Command="{Binding LoginCommand}"
                             CommandParameter="{Binding ElementName=PasswordBox}"
-                            Width="70"/>
-                    <Button Content="Отмена" 
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Width="80"/>
+                    <Button Content="ОТМЕНА" 
                             IsEnabled="{Binding IsLoginButtonEnabled}" 
                             Command="{Binding GoBackCommand}"
+                            Style="{StaticResource LightPrimaryButtonStyle}"
                             Margin="15 0 0 0"/>
                 </StackPanel>
             </Grid>

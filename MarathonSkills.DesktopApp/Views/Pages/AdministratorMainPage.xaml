@@ -25,7 +25,7 @@
                     <ColumnDefinition SharedSizeGroup="Column"/>
                 </Grid.ColumnDefinitions>
                 <Grid.Resources>
-                    <Style TargetType="Button" BasedOn="{StaticResource MenuButtonStyle}">
+                    <Style TargetType="Button" BasedOn="{StaticResource MenuPrimaryOutlineButtonStyle}">
                         <Setter Property="Padding" Value="40 12"/>
                         <Setter Property="FontStyle" Value="Italic"/>
                     </Style>

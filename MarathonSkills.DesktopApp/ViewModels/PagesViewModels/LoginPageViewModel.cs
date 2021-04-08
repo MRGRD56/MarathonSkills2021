@@ -42,7 +42,7 @@ namespace MarathonSkills.DesktopApp.ViewModels.PagesViewModels
             }
         }
 
-        public string LoginButtonText => IsAuthorizationProcess ? "Вход..." : "Войти";
+        public string LoginButtonText => IsAuthorizationProcess ? "ВХОД..." : "ВОЙТИ";
 
         public bool IsLoginButtonEnabled => !IsAuthorizationProcess;
 

@@ -16,23 +16,24 @@
     </Page.Resources>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Я хочу стать бегуном" Style="{DynamicResource MenuButtonStyle}"
+            <Button Content="Я хочу стать бегуном" Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:RegisterAsRunnerPage}"
                     Visibility="{Binding IsNotAuthorized, 
                         Converter={StaticResource VisibilityConverter}}"/>
-            <Button Content="Меню бегуна" Style="{DynamicResource MenuButtonStyle}"
+            <Button Content="Меню бегуна" 
+                    Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
                     Command="{Binding NavigateToProfileCommand}"
                     Visibility="{Binding IsUserRunner, 
                         Converter={StaticResource VisibilityConverter}}"/>
-            <Button Content="Я хочу стать спонсором бегуна" Style="{DynamicResource MenuButtonStyle}"
-                        Command="{Binding NavigateCommand}"
-                        CommandParameter="{x:Type local:SponsorRunnerPage}"/>
-            <Button Content="Я хочу узнать больше о событии" Style="{DynamicResource MenuButtonStyle}"
+            <Button Content="Я хочу стать спонсором бегуна" Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type local:SponsorRunnerPage}"/>
+            <Button Content="Я хочу узнать больше о событии" Style="{DynamicResource MenuPrimaryOutlineButtonStyle}"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type local:MoreInformationPage}"/>
         </StackPanel>
-        <Button Content="Войти" Style="{StaticResource ButtonStyle}" Width="90" Height="30"
+        <Button Content="ВОЙТИ" Style="{StaticResource PrimaryButtonStyle}" Width="90" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local:LoginPage}"
