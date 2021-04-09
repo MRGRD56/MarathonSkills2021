@@ -73,7 +73,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
-                                                        To="#42a5f5" Duration="0:0:0.3"/>
+                                                        To="#1e88e5" Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
